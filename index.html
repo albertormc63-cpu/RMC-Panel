@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>RMC Panel</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <h2>RMC Optimizador</h2>
+    
+    <p class="roster-item">
+        Roster: <span id="rosterName">Sin cargar</span>
+    </p>
+    
+    <p class="total-item">
+        Total piezas: <span id="totalPieces">0</span>
+    </p>
+    
+    <button id="btnProcesar">
+        Procesar Excel + Generar JSON
+    </button>
+    <div>
+
+        <button id="btnIllustrator">
+            Ejecutar Script Illustrator
+        </button>
+    </div>
+
+    <div class="footer-credits">
+        Creado por Jose Alberto Villarreal Garcia
+    </div>
+
+
+    <!-- Consola visual para ver errores -->
+    <div id="log-container">
+        <div class="log-header">
+            Log de Consola 
+            <button id="btnClearLog" style="float: right; cursor: pointer; font-size: 9px; padding: 0 5px;">Limpiar</button>
+        </div>
+        <div id="terminal"></div>
+    </div>
+
+
+
+
+    <script src="./js/CSInterface.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/logger.js"></script>
+
+</body>
+</html>

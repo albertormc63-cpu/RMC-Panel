@@ -1,0 +1,37 @@
+ npm install xlsx
+
+ para dar permisos en mac ejecutar esta linea de comandos en la terminal
+
+sudo chmod -R 755 "/Library/Application Support/Adobe/CEP/extensions/"
+
+/----------------------------
+
+copiar nuestra carpeta del "Plug-in" en esta carpeta
+
+~/Library/Application Support/Adobe/CEP/extensions/
+
+tambien en esta otra 
+opcional
+/Library/Application Support/Adobe/CEP/extensions/
+
+*Si no existen crearlas
+
+/---------------------
+
+Habilitar el modo PlayerDebugMode en Adobe
+
+defaults write com.adobe.CSXS.11 PlayerDebugMode 1
+defaults write com.adobe.CSXS.10 PlayerDebugMode 1
+defaults write com.adobe.CSXS.12 PlayerDebugMode 1
+
+verificar si se ha habilitado, regresa un 1
+
+defaults read com.adobe.CSXS.11 PlayerDebugMode
+
+/--------------------
+
+darle perimosos a CEPHtmlEngine en servicios y permisos de mac, acceso total al disco
+
+/--------------
+En readExcel, para guardar el archivo output.json se debera de cambiar la direccion de donde se esta guardando el archivo, actualmente lo tengo en mi carpeta CEP de mi pc
+pero debdera de cambiar en a de los demas companeros
