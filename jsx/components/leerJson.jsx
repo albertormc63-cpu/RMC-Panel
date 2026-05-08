@@ -33,16 +33,28 @@ function procesarJSON(targetSize, targetStyle, nombreArchivo) {
     // ----------------------------
 
     var filtered = [];
+    var yaCompletados = 0; // Contador nuevo
+
     for (var i = 0; i < players.length; i++) {
-        // Validación de Talla y Variante (Estilo)
         if (players[i].size == targetSize && players[i].variant == targetStyle) {
+            // Si el jugador ya tiene la marca de completado en el JSON
+            if (players[i].completed === true) {
+                yaCompletados++;
+            }
             filtered.push(players[i]);
+        }
+    }
+
+    // SI YA ESTÁN MARCADOS, PREGUNTAR
+    if (filtered.length > 0 && yaCompletados === filtered.length) {
+        if (!confirm("⚠️ Esta combinación (" + targetSize + " - " + targetStyle + ") ya aparece como COMPLETADA.\n\n¿Deseas volver a generar los archivos?")) {
+            return 0; // El usuario decidió no repetir
         }
     }
 
     alert("✅ Roster Validado: " + strJSON + 
           "\nTotal Pzs Excel: " + rootData.totalPieces + 
-          "\nP piezas filtradas para esta acción: " + filtered.length);
+          "\nPiezas a procesar ahora: " + filtered.length);
 
     return filtered;
 }

@@ -47,25 +47,36 @@ document.addEventListener("DOMContentLoaded", function () {
             
             // Verificamos si el resultado contiene la palabra SUCCESS
             if (result && result.indexOf("SUCCESS") !== -1) {
-                // Creamos un array: ["SUCCESS", "SML", "T1600", "12", "77535-26..."]
                 const data = result.split("|");
-                
                 const info = {
-                    status:   data[0],
-                    talla:    data[1],
-                    estilo:   data[2],
-                    cantidad: data[3],
-                    archivo:  data[4]
+                    talla: data[1],
+                    estilo: data[2],
+                    cantidad: data[3]
                 };
 
-                // Tu Logger
-                console.log(`✅ PROCESO COMPLETADO`);
-                console.log(`-Talla [${info.talla}] | Estilo [${info.estilo}]`);
-                console.log(`-Se generaron ${info.cantidad} archivos PDF.`);
+                const fs = require("fs");
+                const jsonPath = "/Users/rmlsub1/Library/Application Support/Adobe/CEP/extensions/RMC_PANEL/output.json";
                 
-            } else if (result === "ROSTER_ERROR") {
-                console.error("El Roster del Excel no coincide con el ID del archivo abierto.");
-                console.error(`-Roster en Excel: ${data.roster}`);
+                let db = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
+                
+                // Marcamos los jugadores
+                db.players.forEach(p => {
+                    if (p.size === info.talla && p.variant === info.estilo) {
+                        p.completed = true; 
+                    }
+                });
+
+                fs.writeFileSync(jsonPath, JSON.stringify(db, null, 2));
+
+                // LOGGER DE CONTROL
+                const totalHechos = db.players.filter(p => p.completed).length;
+                console.log(`✅ PROCESO COMPLETADO`);
+                console.log(`- Talla [${info.talla}] | Estilo [${info.estilo}]`);
+                console.log(`- Progreso del Roster: ${totalHechos} de ${db.players.length} piezas listas.`);
+            } else if (result && result.indexOf("ROSTER_ERROR") !== -1) {
+
+                console.error("El Roster del Excel no coincide con el Roster del archivo abierto.");
+                
             } else if (result === "CANCELLED") {
                 console.warn("Operación cancelada por el usuario.");
                 
@@ -78,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Click en "Limpiar Consola"
     document.getElementById("btnClearLog").addEventListener("click", () => {
+        resetPanel(); // Limpiamos el panel también
         document.getElementById("terminal").innerHTML = "";
         // Opcional: poner un mensaje de que se limpió/*  */
         // logger("Consola limpia", "info");

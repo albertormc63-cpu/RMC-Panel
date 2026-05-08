@@ -15,11 +15,11 @@ function main() {
     // IMPORTANTE: procesarJSON debe devolver [] si el roster no coincide
     if (filtered.length === 0) {
         return "ROSTER_ERROR"; 
+    } else if (filtered === 0){
+        return "CANCELLED"; // El usuario decidió no repetir
     }
-
     guardarPDFs(filtered, config);
 
-    
     // Construimos el string: STATUS|TALLA|ESTILO|CANTIDAD|ARCHIVO
     // Usamos "|" como separador porque es raro encontrarlo en nombres de archivos
     var resumen = [

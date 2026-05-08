@@ -127,7 +127,7 @@ function flujoControlado(){
             break; // ✅ sale del loop si todo está bien
         }
 
-        alert("⚠️ El archivo no coincide. Intenta de nuevo.");
+        alert("⚠️ El archivo no coincide.\n *Verifica escritura de  talla \n XSM - SML - MED - LGE - XLG - 2XL - 3XL - 4XL \n *Verifica escritura de estilo \n A - W - Y - G - I");
 
     }
     return config;
