@@ -5,21 +5,34 @@
 
 
 function main() {
-
-    // Leer el JSON generado
     var config = flujoControlado();
-    // Si el usuario canceló la selección, salir del script
     if (config == null) {
-        return; // cancelado
+        return "CANCELLED"; // El usuario cerró el diálogo inicial
     }
-    // Procesar el JSON y obtener los datos filtrados
+
     var filtered = procesarJSON(config.size, config.style, config.nombreArchivo);
     
-    // Procesar los PDFs con los datos filtrados
+    // IMPORTANTE: procesarJSON debe devolver [] si el roster no coincide
+    if (filtered.length === 0) {
+        return "ROSTER_ERROR"; 
+    }
+
     guardarPDFs(filtered, config);
 
-    alert("Proceso terminado.");
-    app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+    
+    // Construimos el string: STATUS|TALLA|ESTILO|CANTIDAD|ARCHIVO
+    // Usamos "|" como separador porque es raro encontrarlo en nombres de archivos
+    var resumen = [
+        "SUCCESS",
+        config.size,
+        config.style,
+        filtered.length,
+        config.nombreArchivo
+    ];
+    // app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+
+    return resumen.join("|");
 }
 
+// Ejecutamos la función para que evalScript reciba el return
 main();

@@ -12,6 +12,12 @@ console.error = function (message) {
     oldError.apply(console, arguments);
 };
 
+const oldWarn = console.warn;
+console.warn = function (message) {
+    logger(message, "warning");
+    oldWarn.apply(console, arguments);
+};
+
 function logger(mensaje, tipo = "info") {
     const terminal = document.getElementById("terminal");
     const nuevaLinea = document.createElement("div");
@@ -24,6 +30,7 @@ function logger(mensaje, tipo = "info") {
     // Aplicar color según el tipo
     if (tipo === "error") nuevaLinea.className = "log-error";
     if (tipo === "success") nuevaLinea.className = "log-success";
+    if (tipo === "warning") nuevaLinea.className = "log-warning";
     
     terminal.appendChild(nuevaLinea);
     

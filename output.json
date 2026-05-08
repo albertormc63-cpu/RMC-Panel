@@ -1,0 +1,177 @@
+{
+  "roster": "77535-26 Waldwick Warriors Reorder",
+  "totalPieces": "47",
+  "players": [
+    {
+      "style": "T1600A",
+      "variant": "A",
+      "size": "SML",
+      "firstName": "",
+      "lastName": "LYNCH",
+      "player": "9",
+      "position": ""
+    },
+    {
+      "style": "T1600A",
+      "variant": "A",
+      "size": "SML",
+      "firstName": "",
+      "lastName": "BREZINSKI",
+      "player": "17",
+      "position": ""
+    },
+    {
+      "style": "T1600A",
+      "variant": "A",
+      "size": "SML",
+      "firstName": "",
+      "lastName": "ss",
+      "player": "02",
+      "position": ""
+    },
+    {
+      "style": "T1600A",
+      "variant": "A",
+      "size": "SML",
+      "firstName": "",
+      "lastName": "",
+      "player": "20",
+      "position": ""
+    },
+    {
+      "style": "T1600A",
+      "variant": "A",
+      "size": "SML",
+      "firstName": "",
+      "lastName": "DAVID",
+      "player": "00",
+      "position": ""
+    },
+    {
+      "style": "T1600A",
+      "variant": "A",
+      "size": "SML",
+      "firstName": "",
+      "lastName": "LUCSKAY",
+      "player": "09",
+      "position": ""
+    },
+    {
+      "style": "T1600A",
+      "variant": "A",
+      "size": "MED",
+      "firstName": "",
+      "lastName": "GREENE",
+      "player": "0",
+      "position": ""
+    },
+    {
+      "style": "T1600A",
+      "variant": "A",
+      "size": "MED",
+      "firstName": "",
+      "lastName": "",
+      "player": "20",
+      "position": ""
+    },
+    {
+      "style": "T1600A",
+      "variant": "A",
+      "size": "SML",
+      "firstName": "",
+      "lastName": "JANKOWSKI",
+      "player": "02",
+      "position": ""
+    },
+    {
+      "style": "T1600Y",
+      "variant": "Y",
+      "size": "MED",
+      "firstName": "",
+      "lastName": "POLIDORO",
+      "player": "2",
+      "position": ""
+    },
+    {
+      "style": "T1600Y",
+      "variant": "Y",
+      "size": "MED",
+      "firstName": "",
+      "lastName": "KING",
+      "player": "5",
+      "position": ""
+    },
+    {
+      "style": "T1600Y",
+      "variant": "Y",
+      "size": "MED",
+      "firstName": "",
+      "lastName": "HARRIMAN",
+      "player": "06",
+      "position": ""
+    },
+    {
+      "style": "T1600Y",
+      "variant": "Y",
+      "size": "MED",
+      "firstName": "",
+      "lastName": "USNICK",
+      "player": "21",
+      "position": ""
+    },
+    {
+      "style": "T1600Y",
+      "variant": "Y",
+      "size": "MED",
+      "firstName": "",
+      "lastName": "PRIMIANO",
+      "player": "17",
+      "position": ""
+    },
+    {
+      "style": "T1600Y",
+      "variant": "Y",
+      "size": "MED",
+      "firstName": "",
+      "lastName": "GRASSO",
+      "player": "18",
+      "position": ""
+    },
+    {
+      "style": "T1600Y",
+      "variant": "Y",
+      "size": "MED",
+      "firstName": "",
+      "lastName": "ZUCCATO",
+      "player": "21",
+      "position": ""
+    },
+    {
+      "style": "T1600Y",
+      "variant": "Y",
+      "size": "MED",
+      "firstName": "",
+      "lastName": "TOSCO",
+      "player": "07",
+      "position": ""
+    },
+    {
+      "style": "T1600Y",
+      "variant": "Y",
+      "size": "MED",
+      "firstName": "",
+      "lastName": "ALMASH",
+      "player": "23",
+      "position": ""
+    },
+    {
+      "style": "T1600Y",
+      "variant": "Y",
+      "size": "MED",
+      "firstName": "",
+      "lastName": "GRUBMAN",
+      "player": "29",
+      "position": ""
+    }
+  ]
+}

@@ -9,14 +9,14 @@ button {
     width: 100%;
     padding: 10px;
     margin-top: 10px;
-    background: #3f7e5c;
+    background: #821424;
     border: none;
     color: white;
     cursor: pointer;
     border-radius: 4px;
 }
 button:hover {
-    background: #32a36c;
+    background: #a21a2f;
 }
 
 h1, h2 {
@@ -27,7 +27,7 @@ h1, h2 {
 .footer-credits {
     font-size: 10px;
     color: #888888;
-    margin-top: 30px;
+    margin-top: 50px;
     text-align: center;
     border-top: 1px solid #444;
     padding-top: 10px;
@@ -63,7 +63,7 @@ h1, h2 {
 }
 
 #terminal {
-    height: 100px;
+    height: 130px;
     padding: 8px;
     overflow-y: auto;
     white-space: pre-wrap;
@@ -71,6 +71,7 @@ h1, h2 {
 
 .log-error { color: #ff5555; }
 .log-success { color: #50fa7b; }
+.log-warning { color: #f1fa8c; }
 
 #btnClearLog {
     background: #444;
@@ -82,4 +83,26 @@ h1, h2 {
 #btnClearLog:hover {
     background: #555;
     color: #fff;
+}
+
+/* LOGO  */
+.logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.main-logo {
+    /* El logo ocupará el 80% del ancho del panel */
+    width: 100%; 
+    
+    /* Pero nunca será más pequeño de 150px (ajusta este valor a tu gusto) */
+    min-width: 150px; 
+    
+    /* Y para que no se vea gigante si ensanchas mucho el panel */
+    max-width: 250px; 
+    
+    height: auto; /* Mantiene la proporción */
+    display: block;
 }

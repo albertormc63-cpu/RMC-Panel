@@ -118,7 +118,7 @@ function flujoControlado(){
         config = dialogDropdowns();
 
         if (config == null) {
-            alert("Proceso cancelado.");
+            // alert("Proceso cancelado.");
             return null;
         }
 

@@ -35,15 +35,51 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     // Click en "Ejecutar Script Illustrator"
     document.getElementById("btnIllustrator").addEventListener("click", () => {
-        csInterface.evalScript(
-            '$.evalFile("/Users/rmlsub1/Library/Application Support/Adobe/CEP/extensions/RMC_PANEL/jsx/RMC-Optimizador.jsx")'
-        );
+    if (document.getElementById("rosterName").textContent === "Sin cargar") {
+        console.warn("Intentaste ejecutar el script sin cargar un archivo Excel.");
+        return;
+    }
+
+    const scriptPath = '/Users/rmlsub1/Library/Application Support/Adobe/CEP/extensions/RMC_PANEL/jsx/RMC-Optimizador.jsx';
+    
+    // csInterface.evalScript(comando, callback)
+        csInterface.evalScript(`$.evalFile("${scriptPath}")`, (result) => {
+            
+            // Verificamos si el resultado contiene la palabra SUCCESS
+            if (result && result.indexOf("SUCCESS") !== -1) {
+                // Creamos un array: ["SUCCESS", "SML", "T1600", "12", "77535-26..."]
+                const data = result.split("|");
+                
+                const info = {
+                    status:   data[0],
+                    talla:    data[1],
+                    estilo:   data[2],
+                    cantidad: data[3],
+                    archivo:  data[4]
+                };
+
+                // Tu Logger
+                console.log(`✅ PROCESO COMPLETADO`);
+                console.log(`-Talla [${info.talla}] | Estilo [${info.estilo}]`);
+                console.log(`-Se generaron ${info.cantidad} archivos PDF.`);
+                
+            } else if (result === "ROSTER_ERROR") {
+                console.error("El Roster del Excel no coincide con el ID del archivo abierto.");
+                console.error(`-Roster en Excel: ${data.roster}`);
+            } else if (result === "CANCELLED") {
+                console.warn("Operación cancelada por el usuario.");
+                
+            } else {
+                // Por si ocurre un error no controlado en el JSX
+                console.error("❌ Error inesperado en el script de Illustrator:", result);
+            }
+        });
     });
 
     // Click en "Limpiar Consola"
     document.getElementById("btnClearLog").addEventListener("click", () => {
         document.getElementById("terminal").innerHTML = "";
-        // Opcional: poner un mensaje de que se limpió
+        // Opcional: poner un mensaje de que se limpió/*  */
         // logger("Consola limpia", "info");
     });
 
@@ -66,7 +102,7 @@ function cargarJSON(){
 
         document.getElementById("totalPieces").textContent = data.totalPieces;
 
-        console.log(data);
+        console.log(data.roster + " - " + data.totalPieces + " piezas");
 }
 
 // Función para poner todo en "Por defecto"

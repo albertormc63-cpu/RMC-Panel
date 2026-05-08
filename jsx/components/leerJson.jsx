@@ -26,8 +26,8 @@ function procesarJSON(targetSize, targetStyle, nombreArchivo) {
     if (strJSON !== strDoc) {
         alert("❌ ERROR DE ROSTER\n\n" +
               "El archivo abierto no coincide con el Excel.\n\n" +
-              "ID en Excel: " + strJSON + "\n" +
-              "ID en Illustrator: " + strDoc);
+              "Roster en Excel: " + strJSON + "\n" +
+              "Roster en Illustrator: " + strDoc);
         return []; // Detenemos el proceso devolviendo un arreglo vacío
     }
     // ----------------------------
@@ -41,8 +41,8 @@ function procesarJSON(targetSize, targetStyle, nombreArchivo) {
     }
 
     alert("✅ Roster Validado: " + strJSON + 
-          "\nTotal Excel: " + rootData.totalPieces + 
-          "\nJugadores filtrados para esta acción: " + filtered.length);
+          "\nTotal Pzs Excel: " + rootData.totalPieces + 
+          "\nP piezas filtradas para esta acción: " + filtered.length);
 
     return filtered;
 }
