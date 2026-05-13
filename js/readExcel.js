@@ -61,6 +61,20 @@ try {
   const idxSize = headers.indexOf("Size");
   const idxPosition = headers.indexOf("Position");
 
+  // ==============================
+// FUNCIÓN PARA OBTENER VARIANT
+// ==============================
+function obtenerVariant(style) {
+  // Esto es por si nuestro Excel tiene un estilo llamado "TPACK" que no sigue la lógica de tomar la última letra. 
+  // Si el estilo es exactamente "TPACK", devolvemos "TPACK" como variante.
+  // Nos podria servir para futuras excepciones sin tener que tocar toda la lógica de extracción de variante.
+    style = String(style);
+    if (style == "TPACK") {
+        return "TPACK";
+    }
+
+    return style.slice(-1);
+}
   // 4. Filas de datos (a partir de la fila 17 -> índice 16)
   const rows = data.slice(16);
 
@@ -68,7 +82,9 @@ try {
     .filter(row => row[idxStyle])
     .map(row => ({
       style: row[idxStyle],
-      variant: row[idxStyle] ? String(row[idxStyle]).slice(-1) : "",
+      variant: row[idxStyle]
+        ? obtenerVariant(row[idxStyle])
+        : "",
       size: row[idxSize],
       firstName: row[idxFirstName],
       lastName: row[idxLastName],
@@ -86,6 +102,7 @@ try {
   };
 
   // 5. Guardar JSON en la ruta de la extensión RMC_PANEL
+  //cambiar en caso de usar otro pc o ruta, pero siempre debe ser la carpeta "output.json" dentro de la extensión para que el JSX pueda leerlo después
   const outputPath = "/Users/rmlsub1/Library/Application Support/Adobe/CEP/extensions/RMC_PANEL/output.json";
 
   fs.writeFileSync(

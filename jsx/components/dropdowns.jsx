@@ -16,7 +16,7 @@ function dialogDropdowns() {
     // STYLE
     var styleGroup = grupo.add("group");
     styleGroup.add("statictext", undefined, "Style:");
-    var styleDropdown = styleGroup.add("dropdownlist", undefined, ["A", "W", "Y", "G", "I"]);
+    var styleDropdown = styleGroup.add("dropdownlist", undefined, ["A", "W", "Y", "G", "I", "TPACK"]);
     styleDropdown.selection = 0;
 
     // SIZE

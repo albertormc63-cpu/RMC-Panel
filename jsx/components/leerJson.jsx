@@ -1,4 +1,6 @@
 function procesarJSON(targetSize, targetStyle, nombreArchivo) {
+    // Ruta fija al archivo JSON generado por el script de Node.js
+    // puede cambiar si se mueve el proyecto a otra computadora, pero siempre debe ser la carpeta "output.json" dentro de la extensión para que el JSX pueda leerlo después
     var file = new File("/Users/rmlsub1/Library/Application Support/Adobe/CEP/extensions/RMC_PANEL/output.json");
     
     if (!file.exists) {

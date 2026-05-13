@@ -1,5 +1,8 @@
+ Instalar libreria para leer Excel en node
+ 
  npm install xlsx
 
+/---------------------
  para dar permisos en mac ejecutar esta linea de comandos en la terminal
 
 sudo chmod -R 755 "/Library/Application Support/Adobe/CEP/extensions/"
