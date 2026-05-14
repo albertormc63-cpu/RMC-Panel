@@ -1,64 +1,94 @@
 {
-  "roster": "78640-26 Throwback Quincy T1604",
-  "totalPieces": "40",
+  "roster": "78573-26 Elite Navy",
+  "totalPieces": "9",
   "players": [
     {
-      "style": "T1604A",
-      "variant": "A",
+      "style": "R4074W",
+      "variant": "W",
       "size": "SML",
       "firstName": "",
-      "lastName": "",
-      "player": "74",
+      "lastName": "Gandee",
+      "player": "5",
       "position": "",
       "completed": true
     },
     {
-      "style": "T1604A",
-      "variant": "A",
+      "style": "R4074W",
+      "variant": "W",
+      "size": "SML",
+      "firstName": "",
+      "lastName": "Hill",
+      "player": "9",
+      "position": "",
+      "completed": true
+    },
+    {
+      "style": "R4074W",
+      "variant": "W",
+      "size": "SML",
+      "firstName": "",
+      "lastName": "Hoopes",
+      "player": "2",
+      "position": "",
+      "completed": true
+    },
+    {
+      "style": "R4074W",
+      "variant": "W",
       "size": "MED",
       "firstName": "",
-      "lastName": "",
-      "player": "74",
+      "lastName": "Baker",
+      "player": "11",
       "position": "",
       "completed": true
     },
     {
-      "style": "T1604A",
-      "variant": "A",
+      "style": "R4074W",
+      "variant": "W",
+      "size": "MED",
+      "firstName": "",
+      "lastName": "Gearhart",
+      "player": "8",
+      "position": "",
+      "completed": true
+    },
+    {
+      "style": "R4074W",
+      "variant": "W",
+      "size": "MED",
+      "firstName": "",
+      "lastName": "Michel",
+      "player": "16",
+      "position": "",
+      "completed": true
+    },
+    {
+      "style": "R4074W",
+      "variant": "W",
+      "size": "MED",
+      "firstName": "",
+      "lastName": "Rohr",
+      "player": "17",
+      "position": "",
+      "completed": true
+    },
+    {
+      "style": "R4074W",
+      "variant": "W",
       "size": "LGE",
       "firstName": "",
-      "lastName": "",
-      "player": "74",
+      "lastName": "Gross",
+      "player": "21",
       "position": "",
       "completed": true
     },
     {
-      "style": "T1604A",
-      "variant": "A",
-      "size": "XLG",
+      "style": "R4074W",
+      "variant": "W",
+      "size": "LGE",
       "firstName": "",
-      "lastName": "",
-      "player": "74",
-      "position": "",
-      "completed": true
-    },
-    {
-      "style": "T1604A",
-      "variant": "A",
-      "size": "2XL",
-      "firstName": "",
-      "lastName": "",
-      "player": "74",
-      "position": "",
-      "completed": true
-    },
-    {
-      "style": "T1604A",
-      "variant": "A",
-      "size": "3XL",
-      "firstName": "",
-      "lastName": "",
-      "player": "74",
+      "lastName": "Rukavina",
+      "player": "12",
       "position": "",
       "completed": true
     }
